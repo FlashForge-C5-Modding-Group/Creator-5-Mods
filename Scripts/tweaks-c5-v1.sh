@@ -206,6 +206,9 @@ EOF
     echo "[+] Running opkg update"
     opkg update
 
+    echo "[+] Adding aditional packages (Nano, Git)"
+    opkg install nano git
+
     echo "[+] Entware installation finished!"
 }
 
