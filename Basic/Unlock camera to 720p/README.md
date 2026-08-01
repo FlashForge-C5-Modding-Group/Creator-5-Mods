@@ -5,11 +5,11 @@ Tutorial by ano.space
 [Root](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/blob/main/Basic/Enable%20Root/README.md) and an SCP program
 
 ### Tutorial:
-1: Place the sh script in this folder at `/usr/prog/mjpeg-streamer/`
-2: Run `chmod 755 /usr/prog/mjpeg-streamer/start_webcam.sh/`
-3: Run `vi /usr/prog/app_startup.sh`
-4: Look for `/usr/prog/PROGRAM/software/firmwareExe &` (near the bottom)
-5: Press the "INS" (insert) button and add the line below **ABOVE** that line
+1. Place the sh script in this folder at `/usr/prog/mjpeg-streamer/`
+2. Run `chmod 755 /usr/prog/mjpeg-streamer/start_webcam.sh/`
+3. Run `vi /usr/prog/app_startup.sh`
+4. Look for `/usr/prog/PROGRAM/software/firmwareExe &` (near the bottom)
+5. Press the "INS" (insert) button and add the line below **ABOVE** that line
 
 ```
 # start mjpg-streamer before firmwareExe

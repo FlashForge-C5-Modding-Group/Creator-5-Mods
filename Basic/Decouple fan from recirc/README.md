@@ -7,10 +7,10 @@ Tutorial by ano.space
 ### Tutorial:
 Start by opening the Webui of the printer (put the printer's IP address into a web browser)
 
-1: Go to "Machine" (Picture pending)
-2: Go to `printer.macro.cfg`
-3: Find the `[gcode_macro M106]` section (CTRL + F)
-4: Replace the macro with the macro below
+1. Go to "Machine" (Picture pending)
+2. Go to `printer.macro.cfg`
+3. Find the `[gcode_macro M106]` section (CTRL + F)
+4. Replace the macro with the macro below
 ```
 [gcode_macro M106]
 gcode:
@@ -41,4 +41,4 @@ gcode:
   {% endif %}
   ```
 
-5: Save and reboot. Saving and reloading will cause the printer's UI to crash.
+5. Save and reboot. Saving and reloading will cause the printer's UI to crash.
