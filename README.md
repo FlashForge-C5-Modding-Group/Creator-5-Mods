@@ -12,3 +12,6 @@ If you haven't already, do [root](https://github.com/FlashForge-C5-Modding-Group
 
 ### Where are the actual scripts?
 The indev scripts are not available yet, stay tuned for another repo!
+
+# If you are an employee at FlashForge
+You didn't see this, this GitHub organization doesn't exist, and I have no idea what you mean by "Root" on the Creator 5.
