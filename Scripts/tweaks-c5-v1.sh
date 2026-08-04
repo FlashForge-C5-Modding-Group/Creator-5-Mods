@@ -1,6 +1,7 @@
 #!/bin/sh
+
 show_menu() {
-    clear # This command run constantly which may be laggy, look for better way?
+    clear
     echo "==============================================="
     echo "               Tweaks for FF C5                "
     echo "Basic installs made by ano, script made by Cart"
@@ -9,14 +10,14 @@ show_menu() {
     echo "==============================================="
     echo "1) Enable Legacy NaN MIPS binaries"
     echo "2) Install Entware"
-    echo "3) Exit"
+    echo "3) Add Entware packages"
+    echo "4) Exit"
     echo ""
     echo "99) Release Notes"
     echo "================================================"
 }
 
 release_notes() {
-    echo off
     clear
     release_noting
     printf "Press Enter to return to the main menu..."
@@ -27,12 +28,12 @@ release_notes() {
 }
 
 release_noting(){
-    echo "====================================="
-    echo "            Release Notes"
-    echo "              Version 1"
+    echo "========================================="
+    echo "              Release Notes"
+    echo "               Version 1.1"
     echo ""
-    echo " Initial scripts, NaN & Entware only."
-    echo "======================================"
+    echo " Entware Update option added, placeholder"
+    echo "=========================================="
 }
 
 enable_nan_mips() {
@@ -41,6 +42,8 @@ enable_nan_mips() {
 
     if [ ! -d "/usr/prog/PROGRAM/kernel/" ]; then
         echo "[-] Error: /usr/prog/PROGRAM/kernel/ directory not found!"
+        printf "Press Enter to return..."
+        read -r _
         return 1
     fi
 
@@ -49,6 +52,8 @@ enable_nan_mips() {
 
     if [ -z "$HIGHEST_VER" ]; then
         echo "[-] Error: Could not determine kernel package version."
+        printf "Press Enter to return..."
+        read -r _
         return 1
     fi
 
@@ -63,6 +68,8 @@ enable_nan_mips() {
         *)
             echo "[-] Error: No matching offset defined for kernel version '$HIGHEST_VER'."
             echo "    Please verify your kernel package version manually."
+            printf "Press Enter to return..."
+            read -r _
             return 1
             ;;
     esac
@@ -80,6 +87,8 @@ enable_nan_mips() {
         read -r CONFIRM
         if [ "$CONFIRM" != "y" ] && [ "$CONFIRM" != "Y" ]; then
             echo "[*] Aborted."
+            printf "Press Enter to return..."
+            read -r _
             return 0
         fi
     fi
@@ -97,9 +106,8 @@ enable_nan_mips() {
             echo "[+] Startup entry already exists in $STARTUP_FILE."
         else
             echo "[*] Adding patch entry to top of $STARTUP_FILE..."
-            # Uses sed to insert right after line 1 (the shebang)
-            sed -i '1a \
-            '"$CMD_TO_ADD" "$STARTUP_FILE"
+            # POSIX-compliant single-line sed insert after line 1
+            sed -i "1a $CMD_TO_ADD" "$STARTUP_FILE"
             echo "[+] Successfully patched $STARTUP_FILE."
         fi
     else
@@ -107,59 +115,64 @@ enable_nan_mips() {
     fi
 
     echo "[+] Legacy NaN MIPS binaries enablement complete!"
+    printf "Press Enter to return..."
+    read -r _
 }
 
 install_entware() {
     clear
-        echo "[*] Checking for NaN Binaries enablement..."
+    echo "[*] Checking for NaN Binaries enablement..."
 
-        # Ensure $OFFSET is set if it wasn't run previously in Option 1
-        if [ -z "$OFFSET" ]; then
-            if [ -d "/usr/prog/PROGRAM/kernel/" ]; then
-                HIGHEST_VER=$(ls /usr/prog/PROGRAM/kernel/ | sort -V | tail -n 1)
-                case "$HIGHEST_VER" in
-                    "2.0.1"*) OFFSET="0x00a130d1" ;;
-                esac
-            fi
+    # Ensure $OFFSET is set if it wasn't run previously in Option 1
+    if [ -z "$OFFSET" ]; then
+        if [ -d "/usr/prog/PROGRAM/kernel/" ]; then
+            HIGHEST_VER=$(ls /usr/prog/PROGRAM/kernel/ | sort -V | tail -n 1)
+            case "$HIGHEST_VER" in
+                "2.0.1"*) OFFSET="0x00a130d1" ;;
+            esac
         fi
+    fi
 
-        # Fallback safety if offset still couldn't be determined
-        if [ -z "$OFFSET" ]; then
-            echo "[-] Error: Could not determine kernel offset to verify NaN support."
-            echo "Press Enter to return..."
-            read -r _
-            return 1
-        fi
+    # Fallback safety if offset still couldn't be determined
+    if [ -z "$OFFSET" ]; then
+        echo "[-] Error: Could not determine kernel offset to verify NaN support."
+        printf "Press Enter to return..."
+        read -r _
+        return 1
+    fi
 
-        # Read current state
-        CURRENT_VAL=$(busybox devmem "$OFFSET" 8 2>/dev/null)
-        echo "[+] Current memory value at $OFFSET: $CURRENT_VAL"
+    # Read current state
+    CURRENT_VAL=$(busybox devmem "$OFFSET" 8 2>/dev/null)
+    echo "[+] Current memory value at $OFFSET: $CURRENT_VAL"
 
-        if [ "$CURRENT_VAL" != "0x01" ]; then
-            echo ""
-            echo "[!] Error: Expected memory value 0x01, but read '$CURRENT_VAL'."
-            echo "    You MUST enable Legacy NaN MIPS binaries before installing Entware!"
-            echo ""
-            printf "Press Enter to return to main menu..."
+    if [ "$CURRENT_VAL" != "0x01" ]; then
+        echo ""
+        echo "[!] Error: Expected memory value 0x01, but read '$CURRENT_VAL'."
+        echo "    You MUST enable Legacy NaN MIPS binaries before installing Entware!"
+        echo ""
+        printf "Press Enter to return to main menu..."
+        read -r _
+        return 0
+    fi
+
+    echo "[*] Legacy NaN is enabled, can continue."
+    echo ""
+    echo "[*] Checking for previous installations..."
+    echo ""
+
+    if command -v opkg >/dev/null 2>&1 || [ -x "/opt/bin/opkg" ]; then
+        echo "[!] Entware appears to be installed already! ('opkg' executable found)."
+        echo "[!] We do not recommend running unless something is very broken."
+        echo ""
+        printf "Do you want to force reinstall Entware anyway? Not recommended. (y/N): "
+        read -r REINSTALL
+        if [ "$REINSTALL" != "y" ] && [ "$REINSTALL" != "Y" ]; then
+            echo "[*] Entware installation cancelled."
+            printf "Press Enter to return..."
             read -r _
             return 0
         fi
-    echo "[*] Legacy NaN is enabled, can continue."
-    echo ""
-    echo ""
-    echo "[*] Checking for previous installations"
-    echo ""
-    if command -v opkg >/dev/null 2>&1 || [ -x "/opt/bin/opkg" ]; then
-            echo "[!] Entware appears to be installed already! ('opkg' executable found)."
-            echo "[!] We do not recommend running unless something is very broken."
-            echo ""
-            printf "Do you want to force reinstall Entware anyway? Not recommended. (y/N): "
-            read -r REINSTALL
-            if [ "$REINSTALL" != "y" ] && [ "$REINSTALL" != "Y" ]; then
-                echo "[*] Entware installation cancelled."
-                return 0
-            fi
-        fi
+    fi
 
     echo "[*] Proceeding with Entware installation..."
 
@@ -188,11 +201,31 @@ install_entware() {
 
     # 4. Add mount and unslung startup script to app_startup.sh
     STARTUP_FILE="/usr/prog/app_startup.sh"
+    TARGET_LINE="busybox devmem 0x00a130d1 8 1"
+
     if [ -f "$STARTUP_FILE" ]; then
         if grep -q "rc.unslung" "$STARTUP_FILE"; then
             echo "[+] Entware startup entry already exists in $STARTUP_FILE."
+        elif grep -q "$TARGET_LINE" "$STARTUP_FILE"; then
+            echo "[*] Inserting Entware startup entry directly below '$TARGET_LINE'..."
+
+            # 1. Write the block to a temporary file
+            cat << 'EOF' > /tmp/entware_block.txt
+
+# entware
+mount --bind /usr/data/bin/opt /opt
+[ -x /opt/etc/init.d/rc.unslung ] && /opt/etc/init.d/rc.unslung start
+EOF
+
+            # 2. Insert the contents of the temp file right below TARGET_LINE
+            sed -i "/$TARGET_LINE/r /tmp/entware_block.txt" "$STARTUP_FILE"
+
+            # 3. Clean up temp file
+            rm -f /tmp/entware_block.txt
+
+            echo "[+] Inserted Entware startup entries into $STARTUP_FILE."
         else
-            echo "[*] Appending Entware startup entry into $STARTUP_FILE..."
+            echo "[!] '$TARGET_LINE' not found. Appending Entware entry to end of file..."
             cat << 'EOF' >> "$STARTUP_FILE"
 
 # entware
@@ -210,6 +243,22 @@ EOF
     opkg install nano git
 
     echo "[+] Entware installation finished!"
+    printf "Press Enter to return..."
+    read -r _
+}
+
+add_entware_packages() {
+    clear
+    echo "[*] Checking if Entware is installed..."
+    if command -v opkg >/dev/null 2>&1 || [ -x "/opt/bin/opkg" ]; then
+        echo "[#] Sorry! But this is coming in the next major release"
+        echo "[#] Thank you for using C5 Tweaks! Check back soon for updates!"
+    else
+        echo "[!] Entware doesn't seem to be installed. Please add Entware!"
+        echo "[!] Entware package failure!"
+    fi
+    printf "Press Enter to return..."
+    read -r _
 }
 
 # --- Main Menu Loop ---
@@ -226,15 +275,18 @@ while true; do
             install_entware
             ;;
         3)
+            add_entware_packages
+            ;;
+        4)
             echo "Exiting..."
             exit 0
             ;;
         99)
             release_notes
             ;;
-
         *)
             echo "Invalid option. Please try again."
+            sleep 1
             ;;
     esac
     echo ""
