@@ -4,13 +4,7 @@ Tutorial by ano.space
 ## Requirements
 Legacy NaN
 
+**⚠️THIS TUTORIAL IS BEING REPLACED BY AN AUTOINSTALL SCRIPT⚠️
+⚠️SCRIPT IS AVAILABLE UNDER "SCRIPTS"⚠️**
+
 ### Tutorial
-
-
-Now you can ssh with the credentials of
-```
-username: pwned
-password: letmein
-```
-
-If you want to change the script, make sure they are made with UNIX line endings and not Windows, or else it will not work.
