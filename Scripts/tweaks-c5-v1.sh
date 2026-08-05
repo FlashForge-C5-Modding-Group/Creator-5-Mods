@@ -6,13 +6,15 @@ show_menu() {
     echo "               Tweaks for FF C5                "
     echo "Basic installs made by ano, script made by Cart"
     echo "              discord.gg/7nJUB9dq4F            "
-    echo "                  Version 1                    "
+    echo "                 Version 1.2                   "
     echo "==============================================="
     echo "1) Enable Legacy NaN MIPS binaries"
     echo "2) Install Entware"
-    echo "3) Add Entware packages"
-    echo "4) Exit"
+    echo "3) Update Mainsail"
+    echo "4) Update Moonraker (INDEV)"
+    echo "5) Exit"
     echo ""
+    echo "98) Credits"
     echo "99) Release Notes"
     echo "================================================"
 }
@@ -30,9 +32,9 @@ release_notes() {
 release_noting(){
     echo "========================================="
     echo "              Release Notes"
-    echo "               Version 1.1"
+    echo "               Version 1.2"
     echo ""
-    echo " Entware Update option added, placeholder"
+    echo "   Mainsail Updater, no Moonraker yet...  "
     echo "=========================================="
 }
 
@@ -68,6 +70,7 @@ enable_nan_mips() {
         *)
             echo "[-] Error: No matching offset defined for kernel version '$HIGHEST_VER'."
             echo "    Please verify your kernel package version manually."
+            echo "[-] Please manually update the script and commit back."
             printf "Press Enter to return..."
             read -r _
             return 1
@@ -251,14 +254,68 @@ add_entware_packages() {
     clear
     echo "[*] Checking if Entware is installed..."
     if command -v opkg >/dev/null 2>&1 || [ -x "/opt/bin/opkg" ]; then
-        echo "[#] Sorry! But this is coming in the next major release"
-        echo "[#] Thank you for using C5 Tweaks! Check back soon for updates!"
+        echo "[+] Entware is detected, can continue."
+        echo "[*] Getting required Entware packages, may take a moment."
+        opkg update
+        opkg install curl git
+        echo "[+] Done installing packages."
+        echo "[*] Checking for previous backups..."
+
+        if [ -e "/usr/data/mainsailbackup" ]; then
+            echo "[!] Warning: /usr/data/mainsailbackup already exists. It is recommended to move it manually if you have already updated once."
+            printf "[?] Would you like to overwrite it? (y/N): "
+            read -r reply
+            case "$reply" in
+                [Yy]*)
+                    echo "[*] Removing existing mainsailbackup..."
+                    rm -rf "/usr/data/mainsailbackup"
+                    echo "[+] Removed. Ready to continue with mainsail update."
+                    ;;
+                *)
+                    echo "[!] Overwrite declined. Aborting operation."
+                    printf "Press Enter to return..."
+                    read -r _
+                    return 1
+                    ;;
+            esac
+        fi
+
+        echo "[+] Continuing update."
+        echo "[+] Moving old Mainsail"
+        mv /usr/data/mainsail /usr/data/mainsailbackup
+        mkdir /usr/data/mainsail && cd /usr/data/mainsail
+        echo "[+] Downloading new Mainsail..."
+        curl -LO --output-dir /usr/data/ https://github.com/mainsail-crew/mainsail/releases/download/v2.18.2/mainsail.zip
+        echo "[+] Unzipping Mainsail..."
+        unzip /usr/data/mainsail.zip -d /usr/data/mainsail
+        echo "[*] All finished! Ready to reboot!"
+        printf "Press Enter to reboot..."
+        read -r _
+        echo "[*] Printer will reboot now! Goodbye."
+        reboot
     else
         echo "[!] Entware doesn't seem to be installed. Please add Entware!"
         echo "[!] Entware package failure!"
     fi
     printf "Press Enter to return..."
     read -r _
+}
+
+update_moonraker () {
+    echo "Updating Moonraker isn't supported yet..."
+    echo "Check back for updates!"
+    printf "Press Enter to return..."
+    read -r _
+}
+
+credits () {
+    echo "================================================================"
+    echo "                          Credits for"
+    echo "                          Version 1.2"
+    echo ""
+    echo "All scripts are made by Cart. Some AI assist, not written by AI."
+    echo " github/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts "
+    echo "================================================================"
 }
 
 # --- Main Menu Loop ---
@@ -278,8 +335,14 @@ while true; do
             add_entware_packages
             ;;
         4)
+            update_moonraker
+            ;;
+        5)
             echo "Exiting..."
             exit 0
+            ;;
+        98)
+            credits
             ;;
         99)
             release_notes
@@ -289,5 +352,4 @@ while true; do
             sleep 1
             ;;
     esac
-    echo ""
 done
