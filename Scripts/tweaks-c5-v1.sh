@@ -131,7 +131,7 @@ install_entware() {
         if [ -d "/usr/prog/PROGRAM/kernel/" ]; then
             HIGHEST_VER=$(ls /usr/prog/PROGRAM/kernel/ | sort -V | tail -n 1)
             case "$HIGHEST_VER" in
-                "2.0.1"*) OFFSET="0x00a130d1" ;;
+                "2.0.1"* | "2.0.5"*) OFFSET="0x00a130d1" ;;
             esac
         fi
     fi
