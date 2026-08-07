@@ -6,7 +6,7 @@ show_menu() {
     echo "               Tweaks for FF C5                "
     echo "Basic installs made by ano, script made by Cart"
     echo "              discord.gg/7nJUB9dq4F            "
-    echo "                 Version 1.2.1                 "
+    echo "                 Version 1.2.2                 "
     echo "==============================================="
     echo "1) Enable Legacy NaN MIPS binaries"
     echo "2) Install Entware"
@@ -32,9 +32,9 @@ release_notes() {
 release_noting(){
     echo "========================================="
     echo "              Release Notes"
-    echo "               Version 1.2"
+    echo "               Version 1.2.2"
     echo ""
-    echo "   Mainsail Updater, no Moonraker yet...  "
+    echo "       Adds support for kernel 2.0.5      "
     echo "=========================================="
 }
 
@@ -313,7 +313,7 @@ update_moonraker () {
 credits () {
     echo "================================================================"
     echo "                          Credits for"
-    echo "                          Version 1.2.1"
+    echo "                         Version 1.2.2"
     echo ""
     echo "All scripts are made by Cart. Some AI assist, not written by AI."
     echo " github/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts "
