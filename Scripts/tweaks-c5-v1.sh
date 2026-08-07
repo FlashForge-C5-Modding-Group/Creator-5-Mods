@@ -64,7 +64,7 @@ enable_nan_mips() {
     # Map version to offset
     OFFSET=""
     case "$HIGHEST_VER" in
-        "2.0.1"*)
+        "2.0.1"* | "2.0.5"*)
             OFFSET="0x00a130d1"
             ;;
         *)
