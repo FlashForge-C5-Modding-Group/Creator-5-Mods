@@ -6,7 +6,7 @@ show_menu() {
     echo "               Tweaks for FF C5                "
     echo "Basic installs made by ano, script made by Cart"
     echo "              discord.gg/7nJUB9dq4F            "
-    echo "                 Version 1.2                   "
+    echo "                 Version 1.2.1                 "
     echo "==============================================="
     echo "1) Enable Legacy NaN MIPS binaries"
     echo "2) Install Entware"
@@ -288,6 +288,8 @@ add_entware_packages() {
         curl -LO --output-dir /usr/data/ https://github.com/mainsail-crew/mainsail/releases/download/v2.18.2/mainsail.zip
         echo "[+] Unzipping Mainsail..."
         unzip /usr/data/mainsail.zip -d /usr/data/mainsail
+        echo "[+] Deleting Mainsail ZIP"
+        rm -rf /usr/data/mainsail.zip
         echo "[*] All finished! Ready to reboot!"
         printf "Press Enter to reboot..."
         read -r _
@@ -311,11 +313,13 @@ update_moonraker () {
 credits () {
     echo "================================================================"
     echo "                          Credits for"
-    echo "                          Version 1.2"
+    echo "                          Version 1.2.1"
     echo ""
     echo "All scripts are made by Cart. Some AI assist, not written by AI."
     echo " github/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts "
     echo "================================================================"
+    printf "Press Enter to return..."
+    read -r _
 }
 
 # --- Main Menu Loop ---
