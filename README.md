@@ -1,5 +1,5 @@
-# Creator-5-Written-Scripts
-The written scripts for mods of the Creator 5, straight from Discord.
+# Creator-5-Mods
+A collection of tutorials and scripts for Creator 5 series. Better known as mods.
 
 ## Table of Contents
 
