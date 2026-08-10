@@ -14,4 +14,9 @@ If you haven't already, do [root](https://github.com/FlashForge-C5-Modding-Group
 The scripts are available [here!](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods/tree/main/Scripts)
 
 # If you are an employee at FlashForge
-You didn't see this, this GitHub organization doesn't exist, and I have no idea what you mean by "Root" on the Creator 5.
+You didn't see this, this GitHub organization doesn't exist, and I have no idea what you mean by "Root" on the Creator 5.<br>
+Alternatively, if you are a employee at FlashForge who doesn't mind helping, remember that this exists, and give us the source code for:
+1. firmwareExe - Intertwined with Klipper, must be given due to GPL.
+2. MCU Firmware - Literally Klipper
+
+If you give the community a chance to mod, it'll be huge.
