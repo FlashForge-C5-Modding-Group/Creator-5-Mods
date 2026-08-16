@@ -18,7 +18,7 @@ Some premade scripts are available @ https://github.com/FlashForge-C5-Modding-Gr
 
 ### Some Extra information
 Q: Why use a script to launch applications instead of modifying `start.sh` or `app_startup.sh`<br>
-A: Modifying `app_startup.sh` and making it error before it can read USB drives for firmware updates can cause your printer to brick, this fixes that
+A: Modifying `app_startup.sh` and making it error before it can read USB drives for firmware updates can cause your printer to brick, this fixes that. On top of that, it makes it extremely easy to recover your scripts AFTER you update, as its only a single line to enable all your mods (other than Klipper config changes).
 
 Q: How do I make a script for this?<br>
 A: Any script will run if you put it in `/usr/prog/scripts/scripts/` (.sh extension), so make a normal script and upload it there.
