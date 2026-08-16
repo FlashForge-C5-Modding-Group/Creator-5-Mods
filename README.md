@@ -8,7 +8,7 @@ A collection of tutorials and scripts for Creator 5 series. Better known as mods
 - [Hard Guides](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/tree/main/Hard) - Guides that are difficult, but are definitely worth it.
 
 ## Starting points
-If you haven't already, do [root](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/tree/main/Basic/Enable%20Root) & [Mainsail](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/blob/main/Basic/Enable%20Moonraker%20%26%20Mainsail/README.md) as they are basically required for anything else.
+If you haven't already, do [root](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/tree/main/Basic/Enable%20Root) & [Loop Script](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods/tree/new-install-method/Basic/Loop%20Script) & [Mainsail](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/blob/main/Basic/Enable%20Moonraker%20%26%20Mainsail/README.md) as they are basically required for anything else.
 
 ### Where are the actual scripts?
 The scripts are available [here!](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts)
