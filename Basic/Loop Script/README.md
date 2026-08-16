@@ -4,6 +4,9 @@ Tutorial by Cart
 ## Requirements
 [Root](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/blob/main/Basic/Enable%20Root/README.md) & preferably an SCP client (WinSCP and such)
 
+## ⚠️WARNING⚠️
+Do not enable mods that you already installed via `app_startup.sh`. This is meant for new scripts, new installs, or in the future when you update. 
+
 ### Tutorial
 1. Download this repo https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts/ and extract it (or git clone, whatever is your fancy) (or download the script needed [here](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts/blob/main/scripts/loop/loop.sh))
 2. Move the script `scripts/loop/loop.sh` to `/usr/prog/scripts/loop/` on the printer (you may have to create this folder by running mkdir `/usr/prog/scripts/loop/`)
