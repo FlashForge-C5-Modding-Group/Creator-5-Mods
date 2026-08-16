@@ -12,16 +12,16 @@ Tutorial by Cart
 6. Make a new folder in `/usr/prog/scripts/` that is named scripts by running mkdir `/usr/prog/scripts/scripts/`
 
 All done! Restart to apply changes.
-Any scripts you want to have enabled at startup can be put into `/usr/prog/scripts/scripts/`
+Any scripts you want to have enabled at startup can be put into `/usr/prog/scripts/scripts/`<br>
 Some premade scripts are available @ https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts/tree/main/scripts/scripts
 
 
 ### Some Extra information
-Q: Why use a script to launch applications instead of modifying `start.sh` or `app_startup.sh`
+Q: Why use a script to launch applications instead of modifying `start.sh` or `app_startup.sh`<br>
 A: Modifying `app_startup.sh` and making it error before it can read USB drives for firmware updates can cause your printer to brick, this fixes that
 
-Q: How do I make a script for this?
+Q: How do I make a script for this?<br>
 A: Any script will run if you put it in `/usr/prog/scripts/scripts/` (.sh extension), so make a normal script and upload it there.
 
-Q: Where do I find scripts already made?
+Q: Where do I find scripts already made?<br>
 A: Available @ https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts/tree/main/scripts/scripts
