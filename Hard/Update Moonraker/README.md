@@ -1,5 +1,5 @@
 # Update Moonraker
-Tutorial by ano.space
+Tutorial by ano.space and Cart
 
 ## Requirements
 Legacy NaN, Entware
@@ -7,21 +7,7 @@ Legacy NaN, Entware
 ### Tutorial
 
 1. Set your clock, do it by running `rdate -s time.nist.gov` or whatever time server you perfer.
-You can alternatively set it in `/usr/prog/app_startup.sh` with the code below:
-```sh
-# set time
-(
-    n=0
-    while [ $n -lt 30 ]; do
-        if ping -c1 -W2 time.nist.gov >/dev/null 2>&1; then
-            rdate -s time.nist.gov
-            break
-        fi
-        n=$((n+1))
-        sleep 2
-    done
-) &
-```
+You can alternatively set it automatically by putting `/scripts/scripts/time.sh` ([available here](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts/blob/main/scripts/scripts/time.sh)) to `/usr/prog/scripts/scripts/` and running `chmod +xwr /usr/prog/scripts/scripts/time.sh`
 2. Copy over the `lmdb.h` file in the same folder to `/opt/include`, or download all headers by running the below command. You can do one or the other.
 ```sh
 cd /tmp

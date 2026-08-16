@@ -4,9 +4,6 @@ Tutorial by Cart
 ## Requirements
 [Entware](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/tree/main/Intermediate/Add%20Entware%20Package%20Manager)
 
-**⚠️THIS TUTORIAL IS BEING REPLACED BY AN AUTOINSTALL SCRIPT⚠️
-⚠️SCRIPT IS AVAILABLE UNDER "SCRIPTS"⚠️**
-
 ### Tutorial
 
 1. Get into SSH
