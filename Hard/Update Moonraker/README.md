@@ -2,7 +2,7 @@
 Tutorial by ano.space and Cart
 
 ## Requirements
-Legacy NaN, Entware
+Legacy NaN, Entware (and optionally Loop Script)
 
 ### Tutorial
 
@@ -36,5 +36,5 @@ export PATH=/opt/bin:/opt/sbin:$PATH
 # replace the PYTHON= line with this
 PYTHON=/usr/prog/moonraker/moonraker-env/bin/python3
 ```
-15. Ensure Moonraker is enabled in `/usr/prog/klipper/start.sh` and reboot
-16. You should have up to date Moonraker, and you should be able to see the webcam too.
+15. Ensure Moonraker is enabled in `/usr/prog/klipper/start.sh` (or you have `/usr/prog/scripts/scripts/enable-msmr.sh`) and reboot
+16. You should have up to date Moonraker, and you should be able to see the webcam too if you've updated Mainsail.

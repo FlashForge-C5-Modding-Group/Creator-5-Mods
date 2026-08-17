@@ -18,7 +18,6 @@ All done! Restart to apply changes.
 Any scripts you want to have enabled at startup can be put into `/usr/prog/scripts/scripts/`<br>
 Some premade scripts are available @ https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts/tree/main/scripts/scripts
 
-
 ### Some Extra information
 Q: Why use a script to launch applications instead of modifying `start.sh` or `app_startup.sh`<br>
 A: Modifying `app_startup.sh` and making it error before it can read USB drives for firmware updates can cause your printer to brick, this fixes that. On top of that, it makes it extremely easy to recover your scripts AFTER you update, as its only a single line to enable all your mods (other than Klipper config changes).
@@ -28,3 +27,6 @@ A: Any script will run if you put it in `/usr/prog/scripts/scripts/` (.sh extens
 
 Q: Where do I find scripts already made?<br>
 A: Available @ https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts/tree/main/scripts/scripts
+
+Q: How do I reinstall this after an update?<br>
+A: To reinstall, just follow step number 4.

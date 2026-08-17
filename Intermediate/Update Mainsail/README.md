@@ -8,8 +8,8 @@ Tutorial by Cart
 
 1. Get into SSH
 2. Run `opkg update`
-3. Move old Mainsail to somewhere else `mv /usr/data/mainsail /usr/data/mainsailbackup`
-4. Install git and curl by running `opkg install curl`
+3. Move old Mainsail to somewhere else (Example: `mv /usr/data/mainsail /usr/data/mainsailbackup`)
+4. Install git and curl by running `opkg install git curl`
 5. Make new Mainsail folder and cd to it by running `mkdir /usr/data/mainsail && cd /usr/data/mainsail`
 6. Obtain a newer Mainsail by running `curl -LO https://github.com/mainsail-crew/mainsail/releases/download/v2.18.2/mainsail.zip`
 7. Unzip Mainsail by running `unzip mainsail.zip`
