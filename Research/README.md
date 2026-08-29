@@ -6,6 +6,3 @@ This directory contains research and architecture material that supports Creator
 
 - [Feasibility of an Open, Clean Firmware Stack](Open-Firmware-Migration/README.md) — investigation of a staged migration from the Flashforge control stack to a debuggable Linux, Klipper, Moonraker, and Mainsail architecture.
 
-## Planned migration
-
-The long-term home for this material is [KidCe/Creator-5-Research](https://github.com/KidCe/Creator-5-Research). Once that repository is ready and moved into the FlashForge Creator 5 Modding Group, this directory should become a small index linking mods to the maintained research pages.
