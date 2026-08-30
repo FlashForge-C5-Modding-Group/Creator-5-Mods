@@ -12,7 +12,7 @@ Do not enable mods that you already installed via `app_startup.sh`. This is mean
 2. Move the script `scripts/loop/loop.sh` to `/usr/prog/scripts/loop/` on the printer (you may have to create this folder by running mkdir `/usr/prog/scripts/loop/`)
 3. Run `chmod +xwr /usr/prog/scripts/loop/loop.sh`
 4. Add a new line in `/usr/prog/app_startup.sh` that is right above `/usr/prog/PROGRAM/software/firmwareExe &` that adds `/usr/prog/scripts/loop/loop.sh &`
-6. Make a new folder in `/usr/prog/scripts/` that is named scripts by running mkdir `/usr/prog/scripts/scripts/`
+6. Make a new folder in `/usr/prog/scripts/` that is named scripts by running `mkdir /usr/prog/scripts/scripts/`
 
 All done! Restart to apply changes.
 Any scripts you want to have enabled at startup can be put into `/usr/prog/scripts/scripts/`<br>
