@@ -9,6 +9,6 @@ Tutorial by ano.space and Cart
 2. Run `chmod 755 /usr/prog/mjpeg-streamer/start_webcam.sh`
 3. Move `/scripts/scripts/camera.sh` ([available here](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts/blob/main/scripts/scripts/camera.sh)) to `/usr/prog/scripts/scripts/`
 4. Run `chmod +xwr /usr/prog/scripts/scripts/camera.sh`
-5. Reboot your printer by `reboot` or just unplugging / plugging back in
+5. Reboot your printer by running `reboot` or just unplugging / plugging back in
 
 You should get an error on the UI saying "Failed to open camera," but mjpg-streamer should be running on port 8080 and at 720p@30.
