@@ -4,9 +4,6 @@ Tutorial by ano.space and Cart
 ## Requirements
 Legacy NaN & Loop Script
 
-**⚠️THIS TUTORIAL IS BEING REPLACED BY AN AUTOINSTALL SCRIPT⚠️
-⚠️SCRIPT IS AVAILABLE UNDER "SCRIPTS"⚠️**
-
 ### Tutorial
 1. After running Legacy NAN and the rest, start by running `mkdir -p /usr/data/bin/opt`
 2. After you run that, run `mount --bind /usr/data/bin/opt /opt` (to bind a non writable area to writable)
