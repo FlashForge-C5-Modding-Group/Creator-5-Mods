@@ -4,9 +4,6 @@ Tutorial by ano.space and Cart
 ## Requirements
 [root](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/blob/main/Basic/Enable%20Root/README.md) & Loop Script
 
-**⚠️THIS TUTORIAL IS BEING REPLACED BY AN AUTOINSTALL SCRIPT⚠️
-⚠️SCRIPT IS AVAILABLE UNDER "SCRIPTS"⚠️**
-
 ### Tutorial
 1. Check what version you are currently on for kernel and consult the list at the bottom, do it by running `ls /usr/prog/PROGRAM/kernel/`
 2. If the version exists, check the offset, copy it and run `busybox devmem <offset> 8`, it should return 0x00. If it doesn't, legacy nan is enabled, or something is very wrong.
