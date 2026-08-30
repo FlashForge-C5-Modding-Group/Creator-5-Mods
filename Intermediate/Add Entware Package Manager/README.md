@@ -2,7 +2,7 @@
 Tutorial by ano.space and Cart
 
 ## Requirements
-Legacy NaN & Loop Script
+[Legacy NaN](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods/tree/main/Intermediate/Enable%20Legacy%20NaN) & Loop Script
 
 ### Tutorial
 1. After running Legacy NAN and the rest, start by running `mkdir -p /usr/data/bin/opt`

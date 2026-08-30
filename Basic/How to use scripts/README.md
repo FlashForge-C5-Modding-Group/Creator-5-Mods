@@ -2,7 +2,7 @@
 Tutorial by Cart
 
 ## Requirements:
-Root, SCP file manager
+[Root](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods/tree/main/Basic/Enable%20Root), SCP file manager
 
 ### Tutorial:
 

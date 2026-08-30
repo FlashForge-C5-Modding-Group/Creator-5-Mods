@@ -2,7 +2,7 @@
 Tutorial by ano.space and Cart
 
 ## Requirements:
-[Root](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/blob/main/Basic/Enable%20Root/README.md), Loop script and an SCP program
+[Root](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/blob/main/Basic/Enable%20Root/README.md), [Loop script](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods/tree/main/Basic/Loop%20Script) and an SCP program
 
 ### Tutorial:
 1. Place the sh script included in this folder at `/usr/prog/mjpeg-streamer/` on the printer

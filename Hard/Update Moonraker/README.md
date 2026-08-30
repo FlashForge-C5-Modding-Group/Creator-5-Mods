@@ -2,7 +2,7 @@
 Tutorial by ano.space and Cart
 
 ## Requirements
-Legacy NaN, Entware (and optionally Loop Script)
+[Legacy NaN](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods/tree/main/Intermediate/Enable%20Legacy%20NaN) and [Entware](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods/tree/main/Intermediate/Add%20Entware%20Package%20Manager)
 
 ### Tutorial
 

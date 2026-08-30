@@ -6,7 +6,7 @@ Tutorial by ano
 "We can mitigate this and make the host keys persist by removing the symlink and making it a real directory"
 
 ## Requirements:
-Root
+[Root](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods/tree/main/Basic/Enable%20Root)
 
 ### Tutorial:
 1. Run `mv /etc/dropbear/dropbear_ecdsa_host_key /tmp`
