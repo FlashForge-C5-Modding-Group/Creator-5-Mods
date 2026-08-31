@@ -6,7 +6,7 @@ Tutorial by ano.space and Cart
 
 ### Tutorial:
 1. Place the sh script included in this folder at `/usr/prog/mjpg-streamer/` on the printer
-2. Run `chmod 755 /usr/prog/mjpg-streamer/start_webcam.sh`
+2. Run `chmod 755 /usr/prog/mjpg-streamer/start-webcam.sh`
 3. Move `/scripts/scripts/camera.sh` ([available here](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts/blob/main/scripts/scripts/camera.sh)) to `/usr/prog/scripts/scripts/`
 4. Run `chmod +xwr /usr/prog/scripts/scripts/camera.sh`
 5. Reboot your printer by running `reboot` or just unplugging / plugging back in
