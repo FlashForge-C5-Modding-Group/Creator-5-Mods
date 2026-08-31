@@ -1,5 +1,5 @@
 # Get Root 
-Tutorial by ano.space
+Tutorial by ano.space and Cart
 
 ## Requirements
 A flash drive (Recommended 2.0) formatted to FAT32, as MBR (Recommended 16GB or less)
