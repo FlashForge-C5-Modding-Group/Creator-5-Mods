@@ -8,8 +8,7 @@ Active LAN (Internet) connection for both the printer and your computer
 ### Tutorial
 1. Place `runFirmwareExe.sh` onto the root of the flash drive
 2. Insert the flash drive into the printer, reboot the printer
-3. Wait 1 minute to make sure everything has ran (It will hang forever at the FlashForge bootup screen)
-4. Remove the flash drive and reboot the printer
+3. Once the printer boots, remove the flash drive.
 
 Now you can ssh with the credentials of
 ```
