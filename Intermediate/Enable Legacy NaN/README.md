@@ -18,4 +18,5 @@ All done! Now you can move onto things that require it.
 2.0.1: 0x00a130d1
 2.0.5: 0x00a130d1
 2.0.6: 0x00a130d1
+2.0.7: 0x00B330D1 (Thank you fagu4361)
 ```
