@@ -1,6 +1,8 @@
 # Creator-5-Mods
 A collection of tutorials and scripts for Creator 5 series. Better known as mods.
 
+## OpenCreator is out! Check it out at https://opencreatorcfw.github.io !
+
 ## Table of Contents
 
 - [Basic Guides](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Written-Scripts/tree/main/Basic) - Guides that are easy and basic, usually come straight on the printer.
